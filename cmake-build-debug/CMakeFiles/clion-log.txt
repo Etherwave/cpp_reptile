@@ -1,0 +1,4 @@
+/home/amzing/software/clion/clion-2021.1.1/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/amzing/c++/juanjuan
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/amzing/c++/juanjuan/cmake-build-debug
