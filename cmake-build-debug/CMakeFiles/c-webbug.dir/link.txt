@@ -1,0 +1,1 @@
+/bin/g++ -g CMakeFiles/c-webbug.dir/main.cpp.o CMakeFiles/c-webbug.dir/request.cpp.o CMakeFiles/c-webbug.dir/BeautifulSoup.cpp.o -o c-webbug  -lssl -lcrypto 

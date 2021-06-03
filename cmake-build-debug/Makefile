@@ -58,19 +58,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/amzing/software/clion/clion-2021.1.1/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/nlc/software/clion-2021.1.1/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/amzing/software/clion/clion-2021.1.1/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/nlc/software/clion-2021.1.1/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amzing/c++/juanjuan
+CMAKE_SOURCE_DIR = /home/nlc/workspace/C_workspace/c-webbug
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amzing/c++/juanjuan/cmake-build-debug
+CMAKE_BINARY_DIR = /home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,7 +78,7 @@ CMAKE_BINARY_DIR = /home/amzing/c++/juanjuan/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/amzing/software/clion/clion-2021.1.1/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/nlc/software/clion-2021.1.1/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -89,7 +89,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/amzing/software/clion/clion-2021.1.1/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/nlc/software/clion-2021.1.1/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amzing/c++/juanjuan/cmake-build-debug/CMakeFiles /home/amzing/c++/juanjuan/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/CMakeFiles /home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amzing/c++/juanjuan/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -130,17 +130,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named juanjuan
+# Target rules for targets named c-webbug
 
 # Build rule for target.
-juanjuan: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 juanjuan
-.PHONY : juanjuan
+c-webbug: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 c-webbug
+.PHONY : c-webbug
 
 # fast build rule for target.
-juanjuan/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/juanjuan.dir/build.make CMakeFiles/juanjuan.dir/build
-.PHONY : juanjuan/fast
+c-webbug/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c-webbug.dir/build.make CMakeFiles/c-webbug.dir/build
+.PHONY : c-webbug/fast
 
 BeautifulSoup.o: BeautifulSoup.cpp.o
 
@@ -148,7 +148,7 @@ BeautifulSoup.o: BeautifulSoup.cpp.o
 
 # target to build an object file
 BeautifulSoup.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/juanjuan.dir/build.make CMakeFiles/juanjuan.dir/BeautifulSoup.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c-webbug.dir/build.make CMakeFiles/c-webbug.dir/BeautifulSoup.cpp.o
 .PHONY : BeautifulSoup.cpp.o
 
 BeautifulSoup.i: BeautifulSoup.cpp.i
@@ -157,7 +157,7 @@ BeautifulSoup.i: BeautifulSoup.cpp.i
 
 # target to preprocess a source file
 BeautifulSoup.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/juanjuan.dir/build.make CMakeFiles/juanjuan.dir/BeautifulSoup.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c-webbug.dir/build.make CMakeFiles/c-webbug.dir/BeautifulSoup.cpp.i
 .PHONY : BeautifulSoup.cpp.i
 
 BeautifulSoup.s: BeautifulSoup.cpp.s
@@ -166,7 +166,7 @@ BeautifulSoup.s: BeautifulSoup.cpp.s
 
 # target to generate assembly for a file
 BeautifulSoup.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/juanjuan.dir/build.make CMakeFiles/juanjuan.dir/BeautifulSoup.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c-webbug.dir/build.make CMakeFiles/c-webbug.dir/BeautifulSoup.cpp.s
 .PHONY : BeautifulSoup.cpp.s
 
 main.o: main.cpp.o
@@ -175,7 +175,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/juanjuan.dir/build.make CMakeFiles/juanjuan.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c-webbug.dir/build.make CMakeFiles/c-webbug.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -184,7 +184,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/juanjuan.dir/build.make CMakeFiles/juanjuan.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c-webbug.dir/build.make CMakeFiles/c-webbug.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -193,7 +193,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/juanjuan.dir/build.make CMakeFiles/juanjuan.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c-webbug.dir/build.make CMakeFiles/c-webbug.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 request.o: request.cpp.o
@@ -202,7 +202,7 @@ request.o: request.cpp.o
 
 # target to build an object file
 request.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/juanjuan.dir/build.make CMakeFiles/juanjuan.dir/request.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c-webbug.dir/build.make CMakeFiles/c-webbug.dir/request.cpp.o
 .PHONY : request.cpp.o
 
 request.i: request.cpp.i
@@ -211,7 +211,7 @@ request.i: request.cpp.i
 
 # target to preprocess a source file
 request.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/juanjuan.dir/build.make CMakeFiles/juanjuan.dir/request.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c-webbug.dir/build.make CMakeFiles/c-webbug.dir/request.cpp.i
 .PHONY : request.cpp.i
 
 request.s: request.cpp.s
@@ -220,7 +220,7 @@ request.s: request.cpp.s
 
 # target to generate assembly for a file
 request.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/juanjuan.dir/build.make CMakeFiles/juanjuan.dir/request.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c-webbug.dir/build.make CMakeFiles/c-webbug.dir/request.cpp.s
 .PHONY : request.cpp.s
 
 # Help Target
@@ -231,7 +231,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... juanjuan"
+	@echo "... c-webbug"
 	@echo "... BeautifulSoup.o"
 	@echo "... BeautifulSoup.i"
 	@echo "... BeautifulSoup.s"

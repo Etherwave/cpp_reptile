@@ -4,7 +4,7 @@
 
 using namespace std;
 
-string save_folder = "/home/amzing/图片";
+string save_folder = "/home/nlc/image";
 
 class PicGroup
 {
@@ -101,7 +101,7 @@ PicGroup get_group_name_urls(string group_url)
 }
 
 int main(int argc, char **argv ) {
-    string group_url = "http://www.jj20.com/bz/nxxz/shxz/268535.html";
+    string group_url = "http://www.jj20.com/bz/nxxz/shxz/318786.html";
     PicGroup picGroup = get_group_name_urls(group_url);
     cout<<picGroup.name<<endl;
 

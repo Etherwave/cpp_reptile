@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/amzing/c++/juanjuan/cmake-build-debug"/>
+				<Option working_dir="/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/amzing/c++/juanjuan/cmake-build-debug"/>
+				<Option working_dir="/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/amzing/c++/juanjuan/cmake-build-debug"/>
+				<Option working_dir="/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="juanjuan">
-				<Option output="/home/amzing/c++/juanjuan/cmake-build-debug/juanjuan" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/amzing/c++/juanjuan/cmake-build-debug"/>
+				<Option output="/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/juanjuan" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,15 +53,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 juanjuan"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 juanjuan"/>
+					<CompileFile command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="juanjuan/fast">
-				<Option output="/home/amzing/c++/juanjuan/cmake-build-debug/juanjuan" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/amzing/c++/juanjuan/cmake-build-debug"/>
+				<Option output="/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/juanjuan" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -75,29 +75,29 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 juanjuan/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/amzing/c++/juanjuan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 juanjuan/fast"/>
+					<CompileFile command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -j16 -f &quot;/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/amzing/c++/juanjuan/BeautifulSoup.cpp">
+		<Unit filename="/home/nlc/workspace/C_workspace/c-webbug/BeautifulSoup.cpp">
 			<Option target="juanjuan"/>
 		</Unit>
-		<Unit filename="/home/amzing/c++/juanjuan/BeautifulSoup.h">
+		<Unit filename="/home/nlc/workspace/C_workspace/c-webbug/BeautifulSoup.h">
 			<Option target="juanjuan"/>
 		</Unit>
-		<Unit filename="/home/amzing/c++/juanjuan/main.cpp">
+		<Unit filename="/home/nlc/workspace/C_workspace/c-webbug/main.cpp">
 			<Option target="juanjuan"/>
 		</Unit>
-		<Unit filename="/home/amzing/c++/juanjuan/request.cpp">
+		<Unit filename="/home/nlc/workspace/C_workspace/c-webbug/request.cpp">
 			<Option target="juanjuan"/>
 		</Unit>
-		<Unit filename="/home/amzing/c++/juanjuan/request.h">
+		<Unit filename="/home/nlc/workspace/C_workspace/c-webbug/request.h">
 			<Option target="juanjuan"/>
 		</Unit>
-		<Unit filename="/home/amzing/c++/juanjuan/CMakeLists.txt">
+		<Unit filename="/home/nlc/workspace/C_workspace/c-webbug/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

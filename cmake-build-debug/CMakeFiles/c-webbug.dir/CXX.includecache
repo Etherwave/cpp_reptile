@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/amzing/c++/juanjuan/BeautifulSoup.h
+/home/nlc/workspace/C_workspace/c-webbug/BeautifulSoup.h
 iostream
 -
 string
@@ -20,15 +20,15 @@ codecvt
 locale
 -
 
-/home/amzing/c++/juanjuan/main.cpp
+/home/nlc/workspace/C_workspace/c-webbug/main.cpp
 request.h
-/home/amzing/c++/juanjuan/request.h
+/home/nlc/workspace/C_workspace/c-webbug/request.h
 BeautifulSoup.h
-/home/amzing/c++/juanjuan/BeautifulSoup.h
+/home/nlc/workspace/C_workspace/c-webbug/BeautifulSoup.h
 fstream
 -
 
-/home/amzing/c++/juanjuan/request.h
+/home/nlc/workspace/C_workspace/c-webbug/request.h
 stdio.h
 -
 stdlib.h

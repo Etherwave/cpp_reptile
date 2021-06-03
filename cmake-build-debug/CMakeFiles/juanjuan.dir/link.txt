@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/juanjuan.dir/main.cpp.o CMakeFiles/juanjuan.dir/request.cpp.o CMakeFiles/juanjuan.dir/BeautifulSoup.cpp.o -o juanjuan  -lssl -lcrypto 
