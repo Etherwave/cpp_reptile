@@ -66,10 +66,10 @@ RM = "D:\software\clion\install\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E r
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Git\c-webbug
+CMAKE_SOURCE_DIR = D:\Git\cpp_reptile
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Git\c-webbug\cmake-build-debug
+CMAKE_BINARY_DIR = D:\Git\cpp_reptile\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -98,9 +98,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git\c-webbug\cmake-build-debug\CMakeFiles D:\Git\c-webbug\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git\cpp_reptile\cmake-build-debug\CMakeFiles D:\Git\cpp_reptile\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git\c-webbug\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git\cpp_reptile\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,17 +129,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named c-webbug
+# Target rules for targets named cpp_reptile
 
 # Build rule for target.
-c-webbug: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 c-webbug
-.PHONY : c-webbug
+cpp_reptile: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cpp_reptile
+.PHONY : cpp_reptile
 
 # fast build rule for target.
-c-webbug/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\c-webbug.dir\build.make CMakeFiles/c-webbug.dir/build
-.PHONY : c-webbug/fast
+cpp_reptile/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cpp_reptile.dir\build.make CMakeFiles/cpp_reptile.dir/build
+.PHONY : cpp_reptile/fast
 
 BeautifulSoup.obj: BeautifulSoup.cpp.obj
 
@@ -147,7 +147,7 @@ BeautifulSoup.obj: BeautifulSoup.cpp.obj
 
 # target to build an object file
 BeautifulSoup.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\c-webbug.dir\build.make CMakeFiles/c-webbug.dir/BeautifulSoup.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cpp_reptile.dir\build.make CMakeFiles/cpp_reptile.dir/BeautifulSoup.cpp.obj
 .PHONY : BeautifulSoup.cpp.obj
 
 BeautifulSoup.i: BeautifulSoup.cpp.i
@@ -156,7 +156,7 @@ BeautifulSoup.i: BeautifulSoup.cpp.i
 
 # target to preprocess a source file
 BeautifulSoup.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\c-webbug.dir\build.make CMakeFiles/c-webbug.dir/BeautifulSoup.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cpp_reptile.dir\build.make CMakeFiles/cpp_reptile.dir/BeautifulSoup.cpp.i
 .PHONY : BeautifulSoup.cpp.i
 
 BeautifulSoup.s: BeautifulSoup.cpp.s
@@ -165,7 +165,7 @@ BeautifulSoup.s: BeautifulSoup.cpp.s
 
 # target to generate assembly for a file
 BeautifulSoup.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\c-webbug.dir\build.make CMakeFiles/c-webbug.dir/BeautifulSoup.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cpp_reptile.dir\build.make CMakeFiles/cpp_reptile.dir/BeautifulSoup.cpp.s
 .PHONY : BeautifulSoup.cpp.s
 
 main.obj: main.cpp.obj
@@ -174,7 +174,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\c-webbug.dir\build.make CMakeFiles/c-webbug.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cpp_reptile.dir\build.make CMakeFiles/cpp_reptile.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -183,7 +183,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\c-webbug.dir\build.make CMakeFiles/c-webbug.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cpp_reptile.dir\build.make CMakeFiles/cpp_reptile.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -192,7 +192,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\c-webbug.dir\build.make CMakeFiles/c-webbug.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cpp_reptile.dir\build.make CMakeFiles/cpp_reptile.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 request.obj: request.cpp.obj
@@ -201,7 +201,7 @@ request.obj: request.cpp.obj
 
 # target to build an object file
 request.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\c-webbug.dir\build.make CMakeFiles/c-webbug.dir/request.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cpp_reptile.dir\build.make CMakeFiles/cpp_reptile.dir/request.cpp.obj
 .PHONY : request.cpp.obj
 
 request.i: request.cpp.i
@@ -210,7 +210,7 @@ request.i: request.cpp.i
 
 # target to preprocess a source file
 request.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\c-webbug.dir\build.make CMakeFiles/c-webbug.dir/request.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cpp_reptile.dir\build.make CMakeFiles/cpp_reptile.dir/request.cpp.i
 .PHONY : request.cpp.i
 
 request.s: request.cpp.s
@@ -219,7 +219,7 @@ request.s: request.cpp.s
 
 # target to generate assembly for a file
 request.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\c-webbug.dir\build.make CMakeFiles/c-webbug.dir/request.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cpp_reptile.dir\build.make CMakeFiles/cpp_reptile.dir/request.cpp.s
 .PHONY : request.cpp.s
 
 # Help Target
@@ -230,7 +230,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... c-webbug
+	@echo ... cpp_reptile
 	@echo ... BeautifulSoup.obj
 	@echo ... BeautifulSoup.i
 	@echo ... BeautifulSoup.s

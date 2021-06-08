@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/c-webbug.dir/BeautifulSoup.cpp.obj"
+  "CMakeFiles/c-webbug.dir/ThreadPool.cpp.obj"
   "CMakeFiles/c-webbug.dir/main.cpp.obj"
   "CMakeFiles/c-webbug.dir/request.cpp.obj"
   "c-webbug.exe"

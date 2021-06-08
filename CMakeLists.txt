@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.19)
-project(c-webbug)
+project(cpp_reptile)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
-add_executable(c-webbug main.cpp request.h request.cpp BeautifulSoup.h BeautifulSoup.cpp)
+add_executable(cpp_reptile main.cpp request.h request.cpp BeautifulSoup.h BeautifulSoup.cpp ThreadPool.h)
 
-target_link_libraries(c-webbug ssl)
-target_link_libraries(c-webbug crypto)
+target_link_libraries(cpp_reptile ssl)
+target_link_libraries(cpp_reptile crypto)
 
-target_link_libraries(c-webbug iconv)
-target_link_libraries(c-webbug Ws2_32)
+target_link_libraries(cpp_reptile iconv)
+target_link_libraries(cpp_reptile Ws2_32)

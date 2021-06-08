@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6"/>
 	<Project>
-		<Option title="c-webbug"/>
+		<Option title="cpp_reptile"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;"/>
@@ -17,8 +17,8 @@
 					<DistClean command="D:/software/msys2/install/mingw64/bin/mingw32-make.exe -f &quot;D:/Git/cpp_reptile/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="c-webbug">
-				<Option output="D:/Git/cpp_reptile/cmake-build-debug/c-webbug.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="cpp_reptile">
+				<Option output="D:/Git/cpp_reptile/cmake-build-debug/cpp_reptile.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="D:/Git/cpp_reptile/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -33,14 +33,14 @@
 					<Add directory="D:/software/msys2/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/software/msys2/install/mingw64/bin/mingw32-make.exe -f &quot;D:/Git/cpp_reptile/cmake-build-debug/Makefile&quot;  VERBOSE=1 c-webbug"/>
+					<Build command="D:/software/msys2/install/mingw64/bin/mingw32-make.exe -f &quot;D:/Git/cpp_reptile/cmake-build-debug/Makefile&quot;  VERBOSE=1 cpp_reptile"/>
 					<CompileFile command="D:/software/msys2/install/mingw64/bin/mingw32-make.exe -f &quot;D:/Git/cpp_reptile/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="D:/software/msys2/install/mingw64/bin/mingw32-make.exe -f &quot;D:/Git/cpp_reptile/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="D:/software/msys2/install/mingw64/bin/mingw32-make.exe -f &quot;D:/Git/cpp_reptile/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="c-webbug/fast">
-				<Option output="D:/Git/cpp_reptile/cmake-build-debug/c-webbug.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="cpp_reptile/fast">
+				<Option output="D:/Git/cpp_reptile/cmake-build-debug/cpp_reptile.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="D:/Git/cpp_reptile/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -55,7 +55,7 @@
 					<Add directory="D:/software/msys2/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/software/msys2/install/mingw64/bin/mingw32-make.exe -f &quot;D:/Git/cpp_reptile/cmake-build-debug/Makefile&quot;  VERBOSE=1 c-webbug/fast"/>
+					<Build command="D:/software/msys2/install/mingw64/bin/mingw32-make.exe -f &quot;D:/Git/cpp_reptile/cmake-build-debug/Makefile&quot;  VERBOSE=1 cpp_reptile/fast"/>
 					<CompileFile command="D:/software/msys2/install/mingw64/bin/mingw32-make.exe -f &quot;D:/Git/cpp_reptile/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="D:/software/msys2/install/mingw64/bin/mingw32-make.exe -f &quot;D:/Git/cpp_reptile/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="D:/software/msys2/install/mingw64/bin/mingw32-make.exe -f &quot;D:/Git/cpp_reptile/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -83,25 +83,22 @@
 			</Target>
 		</Build>
 		<Unit filename="D:/Git/cpp_reptile/BeautifulSoup.cpp">
-			<Option target="c-webbug"/>
+			<Option target="cpp_reptile"/>
 		</Unit>
 		<Unit filename="D:/Git/cpp_reptile/BeautifulSoup.h">
-			<Option target="c-webbug"/>
-		</Unit>
-		<Unit filename="D:/Git/cpp_reptile/ThreadPool.cpp">
-			<Option target="c-webbug"/>
+			<Option target="cpp_reptile"/>
 		</Unit>
 		<Unit filename="D:/Git/cpp_reptile/ThreadPool.h">
-			<Option target="c-webbug"/>
+			<Option target="cpp_reptile"/>
 		</Unit>
 		<Unit filename="D:/Git/cpp_reptile/main.cpp">
-			<Option target="c-webbug"/>
+			<Option target="cpp_reptile"/>
 		</Unit>
 		<Unit filename="D:/Git/cpp_reptile/request.cpp">
-			<Option target="c-webbug"/>
+			<Option target="cpp_reptile"/>
 		</Unit>
 		<Unit filename="D:/Git/cpp_reptile/request.h">
-			<Option target="c-webbug"/>
+			<Option target="cpp_reptile"/>
 		</Unit>
 		<Unit filename="D:/Git/cpp_reptile/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

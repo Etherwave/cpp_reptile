@@ -1,5 +1,6 @@
 #include "request.h"
 #include "BeautifulSoup.h"
+#include "ThreadPool.h"
 #include <fstream>
 
 using namespace std;
@@ -12,6 +13,8 @@ public:
     string name;
     vector<string> urls;
 };
+
+
 
 bool download_pic(string image_url, string save_folder)
 {
@@ -95,7 +98,7 @@ PicGroup get_group_name_urls(string group_url)
 
     for(int i=1;i<=totle_page;i++)
     {
-        string t_utl = url+(char)(i+'0')+".jpg";
+        string t_utl = url+to_string(i)+".jpg";
         picGroup.urls.push_back(t_utl);
     }
 
@@ -107,10 +110,24 @@ int main(int argc, char **argv ) {
     PicGroup picGroup = get_group_name_urls(group_url);
     cout<<picGroup.name<<endl;
 
+    // create thread pool with 4 worker threads
+    int max_thread_number = 12;
+    ThreadPool pool(max_thread_number);
+
+    // enqueue and store future
+    vector<future<bool>> results;
     for(int i=0;i!=picGroup.urls.size();i++)
     {
         cout<<picGroup.urls[i]<<endl;
-        download_pic(picGroup.urls[i], save_folder+"/"+picGroup.name);
+        results.push_back(pool.enqueue(&download_pic, picGroup.urls[i], save_folder+"/"+picGroup.name));
     }
+
+    // get result from future
+//    for(int i=0;i!=results.size();i++)
+//    {
+//        cout<<results[i].get()<<endl;
+//    }
+
     return 0;
 }
+

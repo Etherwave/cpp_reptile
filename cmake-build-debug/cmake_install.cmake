@@ -1,4 +1,4 @@
-# Install script for directory: D:/Git/c-webbug
+# Install script for directory: D:/Git/cpp_reptile
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/Git/c-webbug/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/Git/cpp_reptile/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

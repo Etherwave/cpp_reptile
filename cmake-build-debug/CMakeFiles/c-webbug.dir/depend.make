@@ -4,7 +4,11 @@
 CMakeFiles/c-webbug.dir/BeautifulSoup.cpp.obj: ../BeautifulSoup.cpp
 CMakeFiles/c-webbug.dir/BeautifulSoup.cpp.obj: ../BeautifulSoup.h
 
+CMakeFiles/c-webbug.dir/ThreadPool.cpp.obj: ../ThreadPool.cpp
+CMakeFiles/c-webbug.dir/ThreadPool.cpp.obj: ../ThreadPool.h
+
 CMakeFiles/c-webbug.dir/main.cpp.obj: ../BeautifulSoup.h
+CMakeFiles/c-webbug.dir/main.cpp.obj: ../ThreadPool.h
 CMakeFiles/c-webbug.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/c-webbug.dir/main.cpp.obj: ../request.h
 

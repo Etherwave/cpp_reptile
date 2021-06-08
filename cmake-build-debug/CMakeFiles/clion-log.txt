@@ -1,4 +1,4 @@
-"D:\software\clion\install\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\Git\c-webbug
+"D:\software\clion\install\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\Git\cpp_reptile
 -- Configuring done
 -- Generating done
--- Build files have been written to: D:/Git/c-webbug/cmake-build-debug
+-- Build files have been written to: D:/Git/cpp_reptile/cmake-build-debug
