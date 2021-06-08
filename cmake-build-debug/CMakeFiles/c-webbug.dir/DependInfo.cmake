@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/nlc/workspace/C_workspace/c-webbug/BeautifulSoup.cpp" "/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/CMakeFiles/c-webbug.dir/BeautifulSoup.cpp.o"
-  "/home/nlc/workspace/C_workspace/c-webbug/main.cpp" "/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/CMakeFiles/c-webbug.dir/main.cpp.o"
-  "/home/nlc/workspace/C_workspace/c-webbug/request.cpp" "/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/CMakeFiles/c-webbug.dir/request.cpp.o"
+  "D:/Git/c-webbug/BeautifulSoup.cpp" "D:/Git/c-webbug/cmake-build-debug/CMakeFiles/c-webbug.dir/BeautifulSoup.cpp.obj"
+  "D:/Git/c-webbug/main.cpp" "D:/Git/c-webbug/cmake-build-debug/CMakeFiles/c-webbug.dir/main.cpp.obj"
+  "D:/Git/c-webbug/request.cpp" "D:/Git/c-webbug/cmake-build-debug/CMakeFiles/c-webbug.dir/request.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -101,6 +101,7 @@ bool URL_HTTP_HOST_PATH::set_url(string url)
 {
     this->url = url;
     this->analyse();
+    return true;
 }
 
 void URL_HTTP_HOST_PATH::analyse()
@@ -175,6 +176,7 @@ ostream &operator << (ostream &out, const URL_HTTP_HOST_PATH &url_http_host_path
        <<" host: "<<url_http_host_path.host
        <<" path: "<<url_http_host_path.path
        <<" port: "<<url_http_host_path.port;
+    return out;
 }
 
 //-------------------------------------URL_HTTP_HOST_PATH end---------------------------------------------------

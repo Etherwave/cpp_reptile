@@ -1,9 +1,11 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/c-webbug.dir/BeautifulSoup.cpp.o"
-  "CMakeFiles/c-webbug.dir/main.cpp.o"
-  "CMakeFiles/c-webbug.dir/request.cpp.o"
-  "c-webbug"
+  "CMakeFiles/c-webbug.dir/BeautifulSoup.cpp.obj"
+  "CMakeFiles/c-webbug.dir/main.cpp.obj"
+  "CMakeFiles/c-webbug.dir/request.cpp.obj"
+  "c-webbug.exe"
+  "c-webbug.exe.manifest"
   "c-webbug.pdb"
+  "libc-webbug.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,16 +1,4 @@
-/home/nlc/software/clion-2021.1.1/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/bin/gcc -DCMAKE_CXX_COMPILER=/bin/g++ -G "CodeBlocks - Unix Makefiles" /home/nlc/workspace/C_workspace/c-webbug
--- The C compiler identification is GNU 9.3.0
--- The CXX compiler identification is GNU 9.3.0
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /bin/gcc - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /bin/g++ - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
+"D:\software\clion\install\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\Git\c-webbug
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug
+-- Build files have been written to: D:/Git/c-webbug/cmake-build-debug

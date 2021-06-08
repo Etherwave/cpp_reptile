@@ -7,3 +7,6 @@ add_executable(c-webbug main.cpp request.h request.cpp BeautifulSoup.h Beautiful
 
 target_link_libraries(c-webbug ssl)
 target_link_libraries(c-webbug crypto)
+
+target_link_libraries(c-webbug iconv)
+target_link_libraries(c-webbug Ws2_32)

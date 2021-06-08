@@ -1,3 +1,3 @@
-/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/nlc/workspace/C_workspace/c-webbug/cmake-build-debug/CMakeFiles/c-webbug.dir
+D:/Git/c-webbug/cmake-build-debug/CMakeFiles/c-webbug.dir
+D:/Git/c-webbug/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Git/c-webbug/cmake-build-debug/CMakeFiles/rebuild_cache.dir

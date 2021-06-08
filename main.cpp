@@ -4,7 +4,7 @@
 
 using namespace std;
 
-string save_folder = "/home/nlc/image";
+string save_folder = "C:/Users/Amazing/Pictures";
 
 class PicGroup
 {
@@ -42,7 +42,7 @@ bool download_pic(string image_url, string save_folder)
     Response response = request.get(image_url, header_stream.str());
     if(response.state_code!=200)return flag;
     fstream outfile;
-    outfile.open(save_folder+"/"+image_name, ios::out);
+    outfile.open(save_folder+"/"+image_name, ios::out|ios::binary);
     if(outfile.is_open())
     {
         outfile.write(response.text.c_str(), response.text.size());
@@ -57,7 +57,9 @@ PicGroup get_group_name_urls(string group_url)
     PicGroup picGroup;
     Request request;
     Response response = request.get(group_url);
+    #ifndef _WIN32
     GBKToUTF8(response.text, response.text);
+    #endif
     BeautifulSoup soup(response.text);
     BeautifulSoup h1 = soup.find("h1");
     BeautifulSoup span = h1.find("span");
