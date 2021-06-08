@@ -5,7 +5,7 @@
 
 using namespace std;
 
-string save_folder = "C:/Users/Amazing/Pictures";
+string save_folder = "/home/amzing/图片";
 
 class PicGroup
 {
@@ -13,8 +13,6 @@ public:
     string name;
     vector<string> urls;
 };
-
-
 
 bool download_pic(string image_url, string save_folder)
 {
@@ -106,7 +104,7 @@ PicGroup get_group_name_urls(string group_url)
 }
 
 int main(int argc, char **argv ) {
-    string group_url = "http://www.jj20.com/bz/nxxz/shxz/318786.html";
+    string group_url = "http://www.jj20.com/bz/nxxz/shxz/328674_4.html";
     PicGroup picGroup = get_group_name_urls(group_url);
     cout<<picGroup.name<<endl;
 

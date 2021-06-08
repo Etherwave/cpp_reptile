@@ -1,7 +1,7 @@
-set(CMAKE_CXX_COMPILER "D:/software/msys2/install/mingw64/bin/g++.exe")
+set(CMAKE_CXX_COMPILER "/usr/bin/c++")
 set(CMAKE_CXX_COMPILER_ARG1 "")
 set(CMAKE_CXX_COMPILER_ID "GNU")
-set(CMAKE_CXX_COMPILER_VERSION "10.3.0")
+set(CMAKE_CXX_COMPILER_VERSION "9.3.0")
 set(CMAKE_CXX_COMPILER_VERSION_INTERNAL "")
 set(CMAKE_CXX_COMPILER_WRAPPER "")
 set(CMAKE_CXX_STANDARD_COMPUTED_DEFAULT "14")
@@ -12,7 +12,7 @@ set(CMAKE_CXX14_COMPILE_FEATURES "cxx_std_14;cxx_aggregate_default_initializers;
 set(CMAKE_CXX17_COMPILE_FEATURES "cxx_std_17")
 set(CMAKE_CXX20_COMPILE_FEATURES "cxx_std_20")
 
-set(CMAKE_CXX_PLATFORM_ID "MinGW")
+set(CMAKE_CXX_PLATFORM_ID "Linux")
 set(CMAKE_CXX_SIMULATE_ID "")
 set(CMAKE_CXX_COMPILER_FRONTEND_VARIANT "")
 set(CMAKE_CXX_SIMULATE_VERSION "")
@@ -20,17 +20,17 @@ set(CMAKE_CXX_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "D:/software/msys2/install/mingw64/bin/ar.exe")
-set(CMAKE_CXX_COMPILER_AR "D:/software/msys2/install/mingw64/bin/gcc-ar.exe")
-set(CMAKE_RANLIB "D:/software/msys2/install/mingw64/bin/ranlib.exe")
-set(CMAKE_CXX_COMPILER_RANLIB "D:/software/msys2/install/mingw64/bin/gcc-ranlib.exe")
-set(CMAKE_LINKER "D:/software/msys2/install/mingw64/bin/ld.exe")
+set(CMAKE_AR "/usr/bin/ar")
+set(CMAKE_CXX_COMPILER_AR "/usr/bin/gcc-ar-9")
+set(CMAKE_RANLIB "/usr/bin/ranlib")
+set(CMAKE_CXX_COMPILER_RANLIB "/usr/bin/gcc-ranlib-9")
+set(CMAKE_LINKER "/usr/bin/ld")
 set(CMAKE_MT "")
 set(CMAKE_COMPILER_IS_GNUCXX 1)
 set(CMAKE_CXX_COMPILER_LOADED 1)
 set(CMAKE_CXX_COMPILER_WORKS TRUE)
 set(CMAKE_CXX_ABI_COMPILED TRUE)
-set(CMAKE_COMPILER_IS_MINGW 1)
+set(CMAKE_COMPILER_IS_MINGW )
 set(CMAKE_COMPILER_IS_CYGWIN )
 if(CMAKE_COMPILER_IS_CYGWIN)
   set(CYGWIN 1)
@@ -59,8 +59,8 @@ set(CMAKE_CXX_LINKER_PREFERENCE_PROPAGATES 1)
 
 # Save compiler ABI information.
 set(CMAKE_CXX_SIZEOF_DATA_PTR "8")
-set(CMAKE_CXX_COMPILER_ABI "")
-set(CMAKE_CXX_LIBRARY_ARCHITECTURE "")
+set(CMAKE_CXX_COMPILER_ABI "ELF")
+set(CMAKE_CXX_LIBRARY_ARCHITECTURE "x86_64-linux-gnu")
 
 if(CMAKE_CXX_SIZEOF_DATA_PTR)
   set(CMAKE_SIZEOF_VOID_P "${CMAKE_CXX_SIZEOF_DATA_PTR}")
@@ -71,7 +71,7 @@ if(CMAKE_CXX_COMPILER_ABI)
 endif()
 
 if(CMAKE_CXX_LIBRARY_ARCHITECTURE)
-  set(CMAKE_LIBRARY_ARCHITECTURE "")
+  set(CMAKE_LIBRARY_ARCHITECTURE "x86_64-linux-gnu")
 endif()
 
 set(CMAKE_CXX_CL_SHOWINCLUDES_PREFIX "")
@@ -83,7 +83,7 @@ endif()
 
 
 
-set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "D:/software/msys2/install/mingw64/include/c++/10.3.0;D:/software/msys2/install/mingw64/include/c++/10.3.0/x86_64-w64-mingw32;D:/software/msys2/install/mingw64/include/c++/10.3.0/backward;D:/software/msys2/install/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0/include;D:/software/msys2/install/mingw64/include;D:/software/msys2/install/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed;D:/software/msys2/install/mingw64/x86_64-w64-mingw32/include")
-set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;mingw32;gcc_s;gcc;moldname;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc_s;gcc;moldname;mingwex;kernel32")
-set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "D:/software/msys2/install/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0;D:/software/msys2/install/mingw64/lib/gcc;D:/software/msys2/install/mingw64/x86_64-w64-mingw32/lib;D:/software/msys2/install/mingw64/lib")
+set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "/usr/include/c++/9;/usr/include/x86_64-linux-gnu/c++/9;/usr/include/c++/9/backward;/usr/lib/gcc/x86_64-linux-gnu/9/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include")
+set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;m;gcc_s;gcc;c;gcc_s;gcc")
+set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/usr/lib/gcc/x86_64-linux-gnu/9;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

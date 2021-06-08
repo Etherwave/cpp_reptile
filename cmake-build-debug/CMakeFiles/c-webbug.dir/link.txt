@@ -1,3 +1,0 @@
-"D:\software\clion\install\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\c-webbug.dir/objects.a
-D:\software\msys2\install\mingw64\bin\ar.exe cr CMakeFiles\c-webbug.dir/objects.a @CMakeFiles\c-webbug.dir\objects1.rsp
-D:\software\msys2\install\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\c-webbug.dir/objects.a -Wl,--no-whole-archive -o c-webbug.exe -Wl,--out-implib,libc-webbug.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\c-webbug.dir\linklibs.rsp
