@@ -5,7 +5,7 @@
 
 using namespace std;
 
-string save_folder = "/home/amzing/å›¾ç‰‡";
+string save_folder = "C:/Users/Amazing/Pictures";
 
 class PicGroup
 {
@@ -16,7 +16,7 @@ public:
 
 bool download_pic(string image_url, string save_folder)
 {
-    //å¦‚æœæ–‡ä»¶å¤¹ä¸å­˜åœ¨ï¼Œåˆ™åˆ›å»ºæ–‡ä»¶å¤¹
+    //Èç¹ûÎÄ¼ş¼Ğ²»´æÔÚ£¬Ôò´´½¨ÎÄ¼ş¼Ğ
 #ifdef _WIN32
     if(access(save_folder.c_str(), 0)==-1)mkdir(save_folder.c_str());
 #else
@@ -29,18 +29,19 @@ bool download_pic(string image_url, string save_folder)
     int name_end = image_url.size();
     string image_name = image_url.substr(name_start, name_end-name_start);
     Request request;
-
-    stringstream header_stream;
     URL_HTTP_HOST_PATH url_http_host_path(image_url);
-    header_stream<<"GET "+url_http_host_path.get_path()+" HTTP/1.0\r\n";
-    header_stream<<"Host: " + url_http_host_path.get_host()+"\r\n";
-    header_stream<<"Accept: */*\r\n";
-    header_stream<<"Accept-Language: zh-Hans-CN, zh-Hans; q=0.8, en-US; q=0.5, en; q=0.3\r\n";
-    header_stream<<"User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0\r\n";
-    header_stream<<"Referer: http://cj.jj20.com/\r\n";
-    header_stream<<"Connection: close\r\n";
-    header_stream<<"\r\n";
-    Response response = request.get(image_url, header_stream.str());
+
+    map<string, string> headers = {
+            {"Host", url_http_host_path.get_host()},
+            {"User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0"},
+            {"Accept", "*/*"},
+            {"Accept-Language", "zh-Hans-CN, zh-Hans; q=0.8, en-US; q=0.5, en; q=0.3"},
+            {"Accept-Encoding", "gzip, deflate"},
+            {"Connection", "close"},
+            {"upgrade-insecure-requests", "1"},
+    };
+    Response response = request.get(image_url, headers);
+
     if(response.state_code!=200)return flag;
     fstream outfile;
     outfile.open(save_folder+"/"+image_name, ios::out|ios::binary);
@@ -57,54 +58,56 @@ PicGroup get_group_name_urls(string group_url)
 {
     PicGroup picGroup;
     Request request;
-    Response response = request.get(group_url);
-    #ifndef _WIN32
-    GBKToUTF8(response.text, response.text);
+    map<string, string> headers ={
+            {"Host", "www.umei.cc"},
+            {"User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0"},
+            {"Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"},
+            {"Accept-Language", "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2"},
+            {"Accept-Encoding", "gzip, deflate"},
+            {"Connection", "close"},
+            {"Upgrade-Insecure-Requests", "1"},
+    };
+    Response response = request.get(group_url, headers);
+    #ifdef _WIN32
+    EncodeChange(response.text, response.text, "UTF-8", "GBK");
     #endif
+
     BeautifulSoup soup(response.text);
     BeautifulSoup h1 = soup.find("h1");
-    BeautifulSoup span = h1.find("span");
-    int name_start=0;
-    int name_end = span.text.find("(");
-    if(name_end<0)return picGroup;
-    picGroup.name = span.text.substr(name_start, name_end-name_start);
-    int totle_page_start = span.text.find("/");
-    if(totle_page_start<0)return picGroup;
-    totle_page_start+=1;
-    int totle_page_end = span.text.size()-1;
-    string totle_page_str = span.text.substr(totle_page_start, totle_page_end-totle_page_start);
-    int totle_page = -1;
-    try{totle_page = stoi(totle_page_str);}
-    catch (...){totle_page=-1;}
-    if(totle_page<0)return picGroup;
+    BeautifulSoup div_page = soup.find("div", {{"class", "pages"}});
+    vector<BeautifulSoup> div_page_a = div_page.find_all("a");
+    picGroup.name = h1.text;
 
-    BeautifulSoup body = soup.find("body");
-    vector<BeautifulSoup> scripts = body.find_all("script");
-    BeautifulSoup script = scripts[2];
-
-    int url_start = script.text.find("\'");
-    if(url_start<0)return picGroup;
-    int url_end = script.text.find("\'", url_start+1);
-    if(url_end<0)return picGroup;
-    url_start++;
-    URL_HTTP_HOST_PATH url_http_host_path(group_url);
-    string url = "";
-    if(url_http_host_path.is_https())url+="https://";
-    else url+="http://";
-    url+="pic.jj20.com";
-    url+=script.text.substr(url_start, url_end-url_start-5);
-
-    for(int i=1;i<=totle_page;i++)
+    vector<string> pages_url;
+    for(int i=0;i!=div_page_a.size();i++)
     {
-        string t_utl = url+to_string(i)+".jpg";
-        picGroup.urls.push_back(t_utl);
+        if(div_page_a[i].text[0]>='0'&&div_page_a[i].text[0]<='9')
+        {
+            if(i==0)pages_url.push_back(group_url);
+            else pages_url.push_back("https://www.umei.cc"+div_page_a[i].attribute["href"]);
+        }
     }
 
+    for(int i=0;i!=pages_url.size();i++)
+    {
+        response = request.get(pages_url[i], headers=headers);
+        #ifdef _WIN32
+        EncodeChange(response.text, response.text, "UTF-8", "GBK");
+        #endif
+        soup = BeautifulSoup(response.text);
+        BeautifulSoup div_big_pic = soup.find("div", {{"class", "big-pic"}});
+        BeautifulSoup div_big_pic_img = div_big_pic.find("img");
+        string image_url = div_big_pic_img.attribute["src"];
+        string new_host ="https://kr.zutuanla.com";
+        string old_host = "http://kr.shanghai-jiuxin.com";
+        image_url.replace(0, old_host.size(), new_host);
+        picGroup.urls.push_back(image_url);
+    }
     return picGroup;
 }
 
 int main(int argc, char **argv ) {
-    string group_url = "http://www.jj20.com/bz/nxxz/shxz/328674_4.html";
+    string group_url = "https://www.umei.cc/meinvtupian/xingganmeinv/261728.htm";
     PicGroup picGroup = get_group_name_urls(group_url);
     cout<<picGroup.name<<endl;
 

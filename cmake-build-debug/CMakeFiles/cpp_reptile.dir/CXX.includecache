@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/amzing/Git/cpp_reptile/BeautifulSoup.h
+D:/Git/cpp_reptile/BeautifulSoup.cpp
+BeautifulSoup.h
+D:/Git/cpp_reptile/BeautifulSoup.h
+
+D:/Git/cpp_reptile/BeautifulSoup.h
 iostream
 -
 string
@@ -20,7 +24,7 @@ codecvt
 locale
 -
 
-/home/amzing/Git/cpp_reptile/ThreadPool.h
+D:/Git/cpp_reptile/ThreadPool.h
 vector
 -
 queue
@@ -42,17 +46,21 @@ stdexcept
 iostream
 -
 
-/home/amzing/Git/cpp_reptile/main.cpp
+D:/Git/cpp_reptile/main.cpp
 request.h
-/home/amzing/Git/cpp_reptile/request.h
+D:/Git/cpp_reptile/request.h
 BeautifulSoup.h
-/home/amzing/Git/cpp_reptile/BeautifulSoup.h
+D:/Git/cpp_reptile/BeautifulSoup.h
 ThreadPool.h
-/home/amzing/Git/cpp_reptile/ThreadPool.h
+D:/Git/cpp_reptile/ThreadPool.h
 fstream
 -
 
-/home/amzing/Git/cpp_reptile/request.h
+D:/Git/cpp_reptile/request.cpp
+request.h
+D:/Git/cpp_reptile/request.h
+
+D:/Git/cpp_reptile/request.h
 stdio.h
 -
 stdlib.h

@@ -34,10 +34,8 @@
 
 using namespace std;
 
-int UTF8ToGBK(char* input, size_t charInPutLen, char* output, size_t charOutPutLen);
-int UTF8ToGBK(const string& input, string& output);
-int GBKToUTF8(char* input, size_t charInPutLen, char* output, size_t charOutPutLen);
-int GBKToUTF8(const string& input, string& output);
+int EncodeChange(char* input, size_t charInPutLen, char* output, size_t charOutPutLen, char *from_encode, char* to_encode);
+int EncodeChange(const string& input, string& output, string from_encode, string to_encode);
 
 class URL_HTTP_HOST_PATH
 {
@@ -86,15 +84,15 @@ class Request
 {
 public:
     unsigned int port=80;
-    vector<string> headers;
+    map<string, string> headers;
 
     Request();
-    Response get(string url, string headers="");
-    Response post(string url, string headers="", string data="");
+    Response get(string url, map<string, string> headers=default_headers);
+    Response post(string url, map<string, string> headers=default_headers, string data="");
 
 private:
-    string get_default_headers(string url);
-    string post_default_headers(string url);
+    string headers_map_to_string(map<string, string> headers);
+    const static map<string, string> default_headers;
 };
 
 #endif //AMAZING_REQUEST_H

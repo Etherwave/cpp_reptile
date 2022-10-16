@@ -4,18 +4,18 @@
 
 #include "request.h"
 //-------------------------------------ICONV_FUNCTION begin---------------------------------------------------
-int UTF8ToGBK(char* input, size_t charInPutLen, char* output, size_t charOutPutLen)
-{
 
+int EncodeChange(char* input, size_t charInPutLen, char* output, size_t charOutPutLen, char *from_encode, char* to_encode)
+{
     int ret =0;
     iconv_t cd;
-    cd = iconv_open("GBK","utf-8");
+    cd = iconv_open(to_encode, from_encode);
     ret = iconv(cd, &input, &charInPutLen, &output, &charOutPutLen);
     iconv_close(cd);
     return ret;
 }
 
-int UTF8ToGBK(const string& input, string& output)
+int EncodeChange(const string& input, string& output, string from_encode, string to_encode)
 {
     int ret =0;
     size_t charInPutLen = input.length();
@@ -28,43 +28,11 @@ int UTF8ToGBK(const string& input, string& output)
 
     iconv_t cd;
     char *pOut = pTemp ;
-    cd = iconv_open("utf-8", "GBK");
+    cd = iconv_open(to_encode.c_str(), from_encode.c_str());
     ret = iconv(cd, &pSource, &charInPutLen, &pTemp, &charOutPutLen);
     iconv_close(cd);
     output = pOut;
     delete []pOut;//注意这里，不能使用delete []pTemp, iconv函数会改变指针pTemp的值
-    return ret;
-}
-
-int GBKToUTF8(char* input, size_t charInPutLen, char* output, size_t charOutPutLen)
-{
-    int ret = 0;
-    iconv_t cd;
-    cd = iconv_open("utf-8", "GBK");
-    ret = iconv(cd, &input, &charInPutLen, &output, &charOutPutLen);
-    iconv_close(cd);
-    return ret;
-}
-
-
-int GBKToUTF8(const string& input, string& output)
-{
-    int ret = 0;
-    size_t charInPutLen = input.length();
-    if( charInPutLen == 0)
-        return 0;
-
-    size_t charOutPutLen = 2*charInPutLen+1;
-    char *pTemp = new char[charOutPutLen];
-    memset(pTemp,0,charOutPutLen);
-    iconv_t cd;
-    char *pSource =(char *)input.c_str();
-    char *pOut = pTemp;
-    cd = iconv_open("utf-8", "GBK");
-    ret = iconv(cd, &pSource, &charInPutLen, &pTemp, &charOutPutLen);
-    iconv_close(cd);
-    output= pOut;
-    delete []pOut; //注意这里，不能使用delete []pTemp, iconv函数会改变指针pTemp的值
     return ret;
 }
 
@@ -111,7 +79,7 @@ void URL_HTTP_HOST_PATH::analyse()
     //将url分成http_https, host, path三部分
     //在host后边有可能跟port，这里需要注意
     unsigned long http_https_start = this->url.find("http");
-    if(http_https_start==this->url.npos || http_https_start!=0)return;
+    if(http_https_start==-1 || http_https_start!=0)return;
 
     //http://
     this->https_flag= false;
@@ -136,11 +104,11 @@ void URL_HTTP_HOST_PATH::analyse()
     unsigned long host_end = this->url.find("/", host_start);
 
     //如果找不到host的结束，也就是path的开始位置/，那么就认为没给path，https://后边的全是host
-    if(host_end==this->url.npos){
+    if(host_end==-1){
         this->host = this->url.substr(host_start, this->url.size()-host_start);
         //处理host中的port
         int port_start=this->host.find(":");
-        if(port_start!=this->host.npos)
+        if(port_start!=-1)
         {
             string port_str = this->host.substr(port_start+1, this->host.size()-host_start);
             try {this->port = stoi(port_str);}
@@ -153,7 +121,7 @@ void URL_HTTP_HOST_PATH::analyse()
     this->host = this->url.substr(host_start, host_end-host_start);
     //处理host中的port
     int port_start=this->host.find(":");
-    if(port_start!=this->host.npos)
+    if(port_start!=-1)
     {
         string port_str = this->host.substr(port_start+1, this->host.size()-host_start);
         try {this->port = stoi(port_str);}
@@ -255,7 +223,7 @@ Request::Request()
     ;
 }
 
-Response Request::get(string url, string headers)
+Response Request::get(string url, map<string, string> headers)
 {
     Response response;
     int client_socket;
@@ -330,11 +298,13 @@ Response Request::get(string url, string headers)
     }
 
     //初始化headers
-    if(headers.size()==0)headers = get_default_headers(url);
-//    cout<<headers<<endl;
+    if(headers.size()==0)headers = this->default_headers;
 
+    string headers_str = this->headers_map_to_string(headers);
+    headers_str = "GET "+url_http_host_path.get_path()+" HTTP/1.0\r\n"+ headers_str;
+//    cout<<headers_str<<endl;
     string data = "";
-    string send_package = headers+data;
+    string send_package = headers_str+data;
 
     //发送请求
     if(url_http_host_path.is_https())
@@ -401,7 +371,7 @@ Response Request::get(string url, string headers)
     return response;
 }
 
-Response Request::post(string url, string headers, string data)
+Response Request::post(string url, map<string, string> headers, string data)
 {
     Response response;
     int client_socket;
@@ -476,10 +446,11 @@ Response Request::post(string url, string headers, string data)
     }
 
     //初始化headers
-    if(headers.size()==0)headers = get_default_headers(url);
-//    cout<<headers<<endl;
+    if(headers.size()==0)headers = this->default_headers;
 
-    string send_package = headers+data;
+    string headers_str = this->headers_map_to_string(headers);
+    headers_str = "POST "+url_http_host_path.get_path()+" HTTP/1.0\r\n"+headers_str;
+    string send_package = headers_str+data;
 
     //发送请求
     if(url_http_host_path.is_https())
@@ -546,33 +517,23 @@ Response Request::post(string url, string headers, string data)
     return response;
 }
 
-string Request::get_default_headers(string url)
+string Request::headers_map_to_string(map<string, string> headers)
 {
-    URL_HTTP_HOST_PATH url_http_host_path(url);
-    stringstream header_stream;
-
-    header_stream<<"GET "+url_http_host_path.get_path()+" HTTP/1.0\r\n";
-    header_stream<<"Host: " + url_http_host_path.get_host()+"\r\n";
-    header_stream<<"Accept: */*\r\n";
-    header_stream<<"Accept-Language: zh-Hans-CN, zh-Hans; q=0.8, en-US; q=0.5, en; q=0.3\r\n";
-    header_stream<<"User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0\r\n";
-    header_stream<<"Connection: close\r\n";
-    header_stream<<"\r\n";
-    return header_stream.str();
+    string headers_str="";
+    map<string, string>::iterator it;
+    for(it=headers.begin();it!=headers.end();it++)
+    {
+        headers_str += (it->first+": "+it->second+"\r\n");
+    }
+    headers_str+="\r\n";
+    return headers_str;
 }
 
-string Request::post_default_headers(string url)
-{
-    URL_HTTP_HOST_PATH url_http_host_path(url);
-    stringstream header_stream;
+const map<string, string> Request::default_headers={
+        {"Accept", "*/*"},
+        {"Accept-Language", "zh-Hans-CN, zh-Hans; q=0.8, en-US; q=0.5, en; q=0.3"},
+        {"User-Agent", "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0"},
+        {"Connection", "close"},
+};
 
-    header_stream<<"POST "+url_http_host_path.get_path()+" HTTP/1.0\r\n";
-    header_stream<<"Host: " + url_http_host_path.get_host()+"\r\n";
-    header_stream<<"Accept: */*\r\n";
-    header_stream<<"Accept-Language: zh-Hans-CN, zh-Hans; q=0.8, en-US; q=0.5, en; q=0.3\r\n";
-    header_stream<<"User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0\r\n";
-    header_stream<<"Connection: close\r\n";
-    header_stream<<"\r\n";
-    return header_stream.str();
-}
 //-------------------------------------Request end---------------------------------------------------

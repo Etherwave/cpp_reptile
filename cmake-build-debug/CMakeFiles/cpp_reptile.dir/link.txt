@@ -1,1 +1,3 @@
-/usr/bin/c++ -g CMakeFiles/cpp_reptile.dir/main.cpp.o CMakeFiles/cpp_reptile.dir/request.cpp.o CMakeFiles/cpp_reptile.dir/BeautifulSoup.cpp.o -o cpp_reptile  -lssl -lcrypto -lpthread 
+D:\software\cmake\cmake-3.22.1-windows-x86_64\bin\cmake.exe -E rm -f CMakeFiles\cpp_reptile.dir/objects.a
+D:\software\msys2\install\mingw64\bin\ar.exe qc CMakeFiles\cpp_reptile.dir/objects.a @CMakeFiles\cpp_reptile.dir\objects1.rsp
+D:\software\msys2\install\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\cpp_reptile.dir/objects.a -Wl,--no-whole-archive -o cpp_reptile.exe -Wl,--out-implib,libcpp_reptile.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cpp_reptile.dir\linklibs.rsp

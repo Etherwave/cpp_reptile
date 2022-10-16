@@ -45,6 +45,7 @@ map<string, string> BeautifulSoup::get_tag_attribute(string tag_begin) {
     if(attribute_start<tag_begin.size()-1)
     {
         attribute_end = tag_begin.size()-1;
+        if(tag_begin[attribute_end-1]=='/')attribute_end--;
         string attribute = tag_begin.substr(attribute_start, attribute_end-attribute_start);
         int eq_pos = attribute.find("=");
         if(eq_pos<0)return ans_attribute;
@@ -67,14 +68,19 @@ BeautifulSoup BeautifulSoup::find(string name, map<string, string> attribute) {
     string tag_begin_start_str = "<"+name;
     string tag_begin_end_str = ">";
 
+//    for(auto it=attribute.begin();it!=attribute.end();it++)
+//    {
+//        cout<<it->first<< " "<< it->second<<endl;
+//    }
+
     //找开始标签，并分析属性是否正确
     int tag_begin_start = -1;
     int tag_begin_end = -1;
     string tag_begin = "";
-    bool flag = false;
-    while(!flag)
+    bool flag = true;
+    while(flag)
     {
-        flag = true;
+        flag = false;
         tag_begin_start++;
         tag_begin_start = this->raw_text.find(tag_begin_start_str, tag_begin_start);
         if(tag_begin_start<0)return soup;
@@ -87,7 +93,7 @@ BeautifulSoup BeautifulSoup::find(string name, map<string, string> attribute) {
         {
             if(t_attribute[it->first]!=it->second)
             {
-                flag = false;
+                flag = true;
                 break;
             }
         }
@@ -99,11 +105,13 @@ BeautifulSoup BeautifulSoup::find(string name, map<string, string> attribute) {
     //如何找不到闭标签，说明有可能是在处理<img>这种没有闭标签的标签，那么我们就把这个标签做成一个BeautifulSoup返回即可
     if(tag_end<0)
     {
+//        cout<<tag_begin<<endl;
         soup = BeautifulSoup(tag_begin);
     }
     else
     {
         string all_tag = this->raw_text.substr(tag_begin_start, tag_end+tag_end_str.size()-tag_begin_start);
+//        cout<<all_tag<<endl;
         soup = BeautifulSoup(all_tag);
     }
 
@@ -118,22 +126,21 @@ vector<BeautifulSoup> BeautifulSoup::find_all(string name, map<string, string> a
     string tag_begin_start_str = "<"+name;
     string tag_begin_end_str = ">";
 
-    int tag_begin_start = -1;
+    int tag_begin_start = 0;
     int tag_begin_end = -1;
 
     //找开始标签，并分析属性是否正确
     string tag_begin = "";
     bool flag = false;
-    while(1)
+    while(tag_begin_start<this->text.size())
     {
-        flag = true;
-        tag_begin_start++;
         tag_begin_start = this->raw_text.find(tag_begin_start_str, tag_begin_start);
-        if(tag_begin_start<0)return all_soup;
+        if(tag_begin_start<0)break;
         tag_begin_end = this->raw_text.find(tag_begin_end_str, tag_begin_start);
-        if(tag_begin_end<0)return all_soup;
+        if(tag_begin_end<0)break;
         tag_begin = this->raw_text.substr(tag_begin_start, tag_begin_end-tag_begin_start+1);
 
+        flag = true;
         map<string, string> t_attribute = this->get_tag_attribute(tag_begin);
         for(map<string, string>::iterator it=attribute.begin();it!=attribute.end();it++)
         {
@@ -159,6 +166,7 @@ vector<BeautifulSoup> BeautifulSoup::find_all(string name, map<string, string> a
                 all_soup.push_back(BeautifulSoup(all_tag));
             }
         }
+        tag_begin_start++;
     }
     return all_soup;
 }

@@ -41,8 +41,6 @@ target_link_libraries(c-webbug iconv)
 target_link_libraries(c-webbug Ws2_32)
 ```
 
-并且Windows下默认的字符集就是GBK，不需要转UTF8
-要注释掉下面函数
-```
-GBKToUTF8
-```
+注意有的时候网页的编码是utf-8，在windows上编程的时候注意要将编码从UTF-8转为GBK
+
+requests现在还没有能自动处理301重定向，还需要自己注意，之后再补这个功能

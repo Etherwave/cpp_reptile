@@ -9,8 +9,8 @@ target_link_libraries(cpp_reptile ssl)
 target_link_libraries(cpp_reptile crypto)
 
 # add the follow tow lib when you are in windows system
-#target_link_libraries(cpp_reptile iconv)
-#target_link_libraries(cpp_reptile Ws2_32)
+target_link_libraries(cpp_reptile iconv)
+target_link_libraries(cpp_reptile Ws2_32)
 
 # add the follow one lib when you are in linux system
-target_link_libraries(cpp_reptile pthread)
+#target_link_libraries(cpp_reptile pthread)
